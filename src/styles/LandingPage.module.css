@@ -21,4 +21,34 @@ input {
 .AddButton {
     color: #cacae9;
     background-color: #5164a3;
+    border-color: #5164a3;
+    text-transform: uppercase;
+    margin-left: 34px;
+}
+
+.AddButton:hover {
+    background-color: #cacae9;
+    color: #5164a3;
+    border-color: #cacae9;
+}
+
+.AddButton:active {
+    background-color: #cacae9;
+    color: #5164a3;
+    border-color: #cacae9;
+}
+
+.AddButton:focus {
+    color: #cacae9;
+    background-color: #5164a3;
+    border-color: #5164a3;
+}
+
+.List {
+    margin-top: 24px;
+    margin-bottom: 45px;
+    padding: 0;
+    list-style: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }

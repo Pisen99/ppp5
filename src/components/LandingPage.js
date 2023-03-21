@@ -35,17 +35,19 @@ const LandingPage = () => {
     return (
         <Container className={styles.Lcontainer} fluid="md">
             <h2>Try it out here <i class="fa-solid fa-arrow-down"></i></h2>
+            <div>
             <input
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
             />
             <Button className={styles.AddButton} onClick={() => addItem(input)}>Add</Button>
-            <ul>
+            </div>
+            <ul className={styles.List}>
                 {list.map((item) => (
                     <li key={item.id}>
                         {item.item}
-                        <button onClick={() => deleteItem(item.id)}>x</button>
+                        <i onClick={() => deleteItem(item.id)} class="fa-solid fa-delete-left fa-xl"></i>
                     </li>
                 ))}
             </ul>
