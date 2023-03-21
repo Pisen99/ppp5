@@ -5,8 +5,21 @@ import Button from 'react-bootstrap/Button';
 
 
 const LandingPage = () => {
+    // When button is clicked a new item will be added.
+    const addItem = (item) => {
+        const newItem = {
+            // the key(id) used for each list item.
+            id: Math.random(),
+            item: item,
+        };
+
+        // Adds an item to the list.
+        setList([...list, newItem]);
+        // Clears the input box.
+        setInput("");
+    };
+
     // Stores the items.
-    // eslint-disable-next-line
     const [list, setList] = useState([]);
     // Keeps track on what the item value is.
     const [input, setInput] = useState("");
@@ -19,7 +32,15 @@ const LandingPage = () => {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
             />
-            <Button>Add</Button>
+            <Button onClick={() => addItem(input)}>Add</Button>
+            <ul>
+                {list.map((item) => (
+                    <li key={item.id}>
+                        {item.item}
+                        <button>x</button>
+                    </li>
+                ))}
+            </ul>
             <p>To get full access please login or signup</p>
         </Container>
     )
