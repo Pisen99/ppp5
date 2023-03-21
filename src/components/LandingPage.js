@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Container } from 'react-bootstrap';
-import "../styles/LandingPage.module.css";
+import styles from "../styles/LandingPage.module.css";
 import Button from 'react-bootstrap/Button';
 
 
@@ -25,7 +25,7 @@ const LandingPage = () => {
 
         setList(newList);
     };
-    
+
 
     // Stores the items.
     const [list, setList] = useState([]);
@@ -33,14 +33,14 @@ const LandingPage = () => {
     const [input, setInput] = useState("");
 
     return (
-        <Container fluid="md">
-            <h1>Try it out here <i class="fa-solid fa-arrow-down"></i></h1>
+        <Container className={styles.Lcontainer} fluid="md">
+            <h2>Try it out here <i class="fa-solid fa-arrow-down"></i></h2>
             <input
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
             />
-            <Button onClick={() => addItem(input)}>Add</Button>
+            <Button className={styles.AddButton} onClick={() => addItem(input)}>Add</Button>
             <ul>
                 {list.map((item) => (
                     <li key={item.id}>
