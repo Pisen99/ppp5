@@ -19,6 +19,14 @@ const LandingPage = () => {
         setInput("");
     };
 
+
+    const deleteItem = (id) => {
+        const newList = list.filter((item) => item.id !== id);
+
+        setList(newList);
+    };
+    
+
     // Stores the items.
     const [list, setList] = useState([]);
     // Keeps track on what the item value is.
@@ -37,7 +45,7 @@ const LandingPage = () => {
                 {list.map((item) => (
                     <li key={item.id}>
                         {item.item}
-                        <button>x</button>
+                        <button onClick={() => deleteItem(item.id)}>x</button>
                     </li>
                 ))}
             </ul>
