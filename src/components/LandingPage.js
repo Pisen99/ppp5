@@ -4,6 +4,8 @@ import styles from "../styles/LandingPage.module.css";
 import Button from 'react-bootstrap/Button';
 
 
+// Following code is written along with https://www.youtube.com/watch?v=MXId-Ae6k_I&t=4s.
+
 const LandingPage = () => {
     // When button is clicked a new item will be added.
     const addItem = (item) => {
